@@ -8,6 +8,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf ./dist",
+    "prepack": "npm run clean && npm run build"
+  },
   "main": "dist/index.js",
   "types": "react-meteor-data.d.ts",
   "dependencies": {
