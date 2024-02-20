@@ -3,7 +3,8 @@
   "version": "1.0.2",
   "homepage": "https://github.com/JorgenVatle/react-packages",
   "repository": {
-    "url": "https://github.com/JorgenVatle/react-packages"
+    "url": "https://github.com/JorgenVatle/react-packages.git",
+    "directory": "packages/react-meteor-data"
   },
   "publishConfig": {
     "access": "public"
