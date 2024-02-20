@@ -1,17 +1,23 @@
-# react-packages
+# Meteor react-packages (npm)
+> This is a npm-published fork of the official Meteor [`react-packages`](https://github.com/meteor/react-packages) repository.
+> This allows us leave bundling of React up to Vite, instead of relying on Meteor's bundling system. Giving a little 
+> bit more flexibility in terms of configuration through Vite.
 
-Meteor packages for a great React developer experience
-
-### Linting
-
-Run
-
-```
-npm run lint
+## Installation
+```shell
+meteor npm i @meteor-vite/react-meteor-data
 ```
 
-Note this does not yet all lint. Working on it.
+## Usage
+The API is exactly the same as Meteor's [`react-meteor-data`](https://github.com/meteor/react-packages/tree/master/packages/react-meteor-data) package.
+Just replace your `meteor/react-meteor-data` imports with `@meteor-vite/react-meteor-data`
 
-### Testing
+```tsx
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from '@meteor-vite/react-meteor-data';
 
-Due to difficulties in testing packages with "peer" NPM dependencies, we've worked around by moving package tests into harness test apps. You can find them in `tests/`.
+export function UserID() {
+    const user = useTracker(() => Meteor.user(), []);
+    return (<div>User ID: { user._id }</div>)
+}
+```
