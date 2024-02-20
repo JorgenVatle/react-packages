@@ -185,7 +185,7 @@ const useTrackerWithDeps = <T = any>(reactiveFn: IReactiveFn<T>, deps: Dependenc
     }
 
     return () => {
-      refs.comp.stop();
+      refs.comp?.stop();
       delete refs.comp;
       refs.isMounted = false;
     };
@@ -217,7 +217,7 @@ const _useTracker = Meteor.isServer
   ? useTrackerServer
   : useTrackerClient;
 
-function useTrackerDev (reactiveFn, deps = null, skipUpdate = null) {
+function useTrackerDev (reactiveFn: () => void, deps = undefined, skipUpdate = null) {
   function warn (expects: string, pos: string, arg: string, type: string) {
     console.warn(
       `Warning: useTracker expected a ${expects} in it\'s ${pos} argument `
