@@ -14,6 +14,10 @@
     "prepack": "npm run clean && npm run build"
   },
   "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
   "types": "react-meteor-data.d.ts",
   "dependencies": {
     "fast-deep-equal": "^3.1.3",
