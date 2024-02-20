@@ -20,6 +20,7 @@ export const withTracker = (options: ReactiveFn | ReactiveOptions) => {
         (options as ReactiveOptions).skipUpdate
       );
       return (
+          // @ts-ignore
         <Component ref={ref} {...props} {...data} />
       );
     });
