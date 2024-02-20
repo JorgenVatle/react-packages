@@ -12,6 +12,7 @@
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf ./dist",
+    "postversion": "git add package.json && git commit -m 'Bump versions'",
     "prepack": "npm run clean && npm run build"
   },
   "main": "dist/index.js",
