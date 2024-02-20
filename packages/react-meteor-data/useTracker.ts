@@ -35,9 +35,9 @@ export interface IReactiveFn<T> {
   (c?: Tracker.Computation): T
 }
 
-export interface ISkipUpdate<T> {
+export type ISkipUpdate<T> = {
   <T>(prev: T, next: T): boolean
-}
+} | null;
 
 type TrackerRefs = {
   computation?: Tracker.Computation;
